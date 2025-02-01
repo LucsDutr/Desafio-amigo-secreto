@@ -33,7 +33,7 @@ Este projeto é uma aplicação simples para gerenciar e sortear nomes em um jog
 ## Conhecimentos Apreendidos
 
 Nesse primeiro desafio, encarei minhas primeiras dificuldades com os métodos DOM (Document Object Model).
-Tive que encontrar soluções como o `createElement` e `appendChild`, além de ter experimentado meus primeiros métodos de configuração das exibições no `HTML`, como o `style.display=none` ou `style.display=block`.
+Além de encontrar soluções como o `createElement` e `appendChild`, tive meu primeiro contato com configuração de exibição no `HTML`, usando tanto `style.display=none` como o `style.display=block`.
 
 ## Como Executar
 
