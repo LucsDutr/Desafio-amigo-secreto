@@ -125,8 +125,16 @@ button {
     background-color: #a1a1a1;
 }
 
+.imgbutton {
+    width: 21px;
+    height: 21px;
+    margin-left: 5px;
+}
+
+
 /* Listas */
 ul {
+
     list-style-type: none;
     color: var(--color-text);
     font-family: "Inter", sans-serif;
@@ -159,4 +167,18 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+.friend-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-left: 10px;
 }

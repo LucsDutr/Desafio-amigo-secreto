@@ -9,14 +9,28 @@ function recebeTextoAmigo (){
     const amigo = document.getElementById('amigo');
     amigoNome = amigo.value.trim();    
 }
+function genId(){
+    return Date.now();
+}
 
 function adicionarNomeNaLista(nomeFuncAdd){
     const nomeNaLista = document.createElement("li");
-    nomeNaLista.id = "id-" + nomeFuncAdd;
-    nomeNaLista.textContent = nomeFuncAdd;
-    document.getElementById("listaAmigos").appendChild(nomeNaLista);
+    const id = genId();
+    nomeNaLista.id = id;
+    nomeNaLista.className = 'friend-item';
+    nomeNaLista.innerHTML = `
+        <span>${nomeFuncAdd}</span>
+        <div class="action-buttons">
+            <img src="assets/trash.png" alt="Ícone de lixeira" width="20px" height="20px" onclick="deletarAmigo(${id})">
+            <img src="assets/pencil.png" alt="Ícone de lápis" width="20px" height="20px" onclick="editarAmigo(${id})">
+        </div>
+    `;
+    nomeNaLista.id = id;
+    const listaDeAmigos = document.getElementById("listaAmigos");
+    listaDeAmigos.appendChild(nomeNaLista);
     console.log(listaAmigos);
     console.log(listaAmigos.length);
+
 }
 
 function limparInputAmigo(){
@@ -53,8 +67,40 @@ function gerarNumeroAleatorio(){
     return numAleatorio;
 }
 
+function editarAmigo(idFuncEditar){ 
+    const amigoNalista = document.getElementById(idFuncEditar);
+    const NomeAmigoNalista = amigoNalista.querySelector('span');
+    let novoNome = prompt('Digite o novo nome:');
+    if (!novoNome){
+        alert('Por favor, digite um nome.');
+        return;
+    }
+
+    if (listaAmigos.includes(novoNome)){
+        alert('Nome já foi adicionado, adicione identificadores.');
+        limparInputAmigo();
+        return;
+    }
+
+    NomeAmigoNalista.textContent = novoNome;
+    listaAmigos[listaAmigos.indexOf(NomeAmigoNalista.textContent)] = novoNome;
+    console.log(listaAmigos);
+    console.log(listaAmigos.length);
+}
+
+
+function deletarAmigo(idFuncDeletar){
+    const amigoNalista = document.getElementById(idFuncDeletar);
+    const NomeAmigoNalista = amigoNalista.querySelector('span');
+    listaAmigos.splice(listaAmigos.indexOf(NomeAmigoNalista.textContent), 1);
+    amigoNalista.remove();
+    console.log(listaAmigos);
+    console.log(listaAmigos.length);
+}
+
 function sortearAmigo() {
     limparInputAmigo();
+
     let amigoEscolhido = listaAmigos[gerarNumeroAleatorio()];
     console.log(amigoEscolhido);
     edicaoVisualizacao(true);
