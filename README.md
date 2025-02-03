@@ -30,6 +30,11 @@ Este projeto é uma aplicação simples para gerenciar e sortear nomes em um jog
 - CSS
 - JavaScript
 
+## Conhecimentos Apreendidos
+
+Nesse primeiro desafio, encarei minhas primeiras dificuldades com os métodos DOM (Document Object Model).
+Além de encontrar soluções como o `createElement` e `appendChild`, tive meu primeiro contato com configuração de exibição no `HTML`, usando tanto `style.display=none` como o `style.display=block`.
+
 ## Como Executar
 
 1. Clone o repositório ou baixe os arquivos.
