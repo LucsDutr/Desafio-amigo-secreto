@@ -22,7 +22,7 @@ Este projeto é uma aplicação simples para gerenciar e sortear nomes em um jog
 
 - **`index.html`**: Contém a estrutura HTML da aplicação.
 - **`style.css`**: Define os estilos da aplicação.
-- **`app.js`**: Implementa a lógica para adicionar nomes e sortear.
+- **`app.js`**: Implementa a lógica para adicionar nomes, sortear, editar e excluir.
 
 ## Tecnologias Utilizadas
 
