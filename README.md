@@ -33,7 +33,21 @@ Este projeto é uma aplicação simples para gerenciar e sortear nomes em um jog
 ## Conhecimentos Apreendidos
 
 Nesse primeiro desafio, encarei minhas primeiras dificuldades com os métodos DOM (Document Object Model).
-Além de encontrar soluções como o `createElement` e `appendChild`, tive meu primeiro contato com configuração de exibição no `HTML`, usando tanto `style.display=none` como o `style.display=block`.
+Além de encontrar soluções como o `createElement` e `appendChild`, tive meu primeiro contato com configuração de exibição no `HTML`, usando tanto `style.display=none` como o `style.display=block`. Também descobri um método de editar elementos no HTML usando Templates Strings, exemplo:
+
+```javascript
+const nomeNaLista = document.createElement("li");
+nomeNaLista.innerHTML = `
+    <span>${nomeFuncAdd}</span>
+    <div class="action-buttons">
+        <img src="assets/trash.png" alt="Ícone de lixeira" width="20px" height="20px" onclick="deletarAmigo(${id})">
+        <img src="assets/pencil.png" alt="Ícone de lápis" width="20px" height="20px" onclick="editarAmigo(${id})">
+    </div>
+`;
+
+```
+
+Tudo isso que estiver dentro do `innerHTML` é renderizado como HTML.
 
 ## Como Executar
 
