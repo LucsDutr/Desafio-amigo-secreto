@@ -70,6 +70,7 @@ function gerarNumeroAleatorio(){
 function editarAmigo(idFuncEditar){ 
     const amigoNalista = document.getElementById(idFuncEditar);
     const NomeAmigoNalista = amigoNalista.querySelector('span');
+    const NomeAntigo = NomeAmigoNalista.textContent;
     let novoNome = prompt('Digite o novo nome:');
     if (!novoNome){
         alert('Por favor, digite um nome.');
@@ -81,9 +82,9 @@ function editarAmigo(idFuncEditar){
         limparInputAmigo();
         return;
     }
-
+    listaAmigos[listaAmigos.indexOf(NomeAntigo)] = novoNome;
     NomeAmigoNalista.textContent = novoNome;
-    listaAmigos[listaAmigos.indexOf(NomeAmigoNalista.textContent)] = novoNome;
+    NomeAntigo = '';
     console.log(listaAmigos);
     console.log(listaAmigos.length);
 }
